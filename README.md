@@ -2,10 +2,6 @@
 
 A clean, modern full-stack MERN application for efficient product management with real-time statistics and an intuitive user interface.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
-![MongoDB](https://img.shields.io/badge/mongodb-latest-green.svg)
-
 ---
 
 ## ✨ Features
@@ -202,30 +198,6 @@ db.products.insertMany([...paste sample data...])
 
 ---
 
-## 📂 Project Structure
-
-```
-product-manager/
-├── backend/
-│   ├── models/
-│   │   └── Product.js
-│   ├── routes/
-│   │   └── products.js
-│   ├── .env
-│   ├── server.js
-│   └── package.json
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   └── index.js
-│   └── package.json
-└── README.md
-```
-
----
 
 ## 🔧 Configuration
 
