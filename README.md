@@ -198,30 +198,6 @@ db.products.insertMany([...paste sample data...])
 
 ---
 
-## 📂 Project Structure
-
-```
-product-manager/
-├── backend/
-│   ├── models/
-│   │   └── Product.js
-│   ├── routes/
-│   │   └── products.js
-│   ├── .env
-│   ├── server.js
-│   └── package.json
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   └── index.js
-│   └── package.json
-└── README.md
-```
-
----
 
 ## 🔧 Configuration
 
