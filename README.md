@@ -2,10 +2,6 @@
 
 A clean, modern full-stack MERN application for efficient product management with real-time statistics and an intuitive user interface.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
-![MongoDB](https://img.shields.io/badge/mongodb-latest-green.svg)
-
 ---
 
 ## ✨ Features
