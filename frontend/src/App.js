@@ -1,54 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import ProductCard from './components/ProductCard';
 
-// Card Component - Displays product information
-const ProductCard = ({ product, onDelete, onEdit }) => {
-  return (
-    <div className="product-card">
-      <div className="product-header">
-        <h3 className="product-name">{product.name}</h3>
-        <span className="product-category">{product.category}</span>
-      </div>
-      
-      <p className="product-description">{product.description}</p>
-      
-      <div className="product-footer">
-        <div className="product-price-container">
-          <span className="price-label">Price</span>
-          <span className="product-price">${product.price.toFixed(2)}</span>
-        </div>
-        
-        <div className="product-actions">
-          <button
-            onClick={() => onEdit(product)}
-            className="btn btn-warning btn-small"
-          >
-            ✏️ Edit
-          </button>
-          <button
-            onClick={() => onDelete(product._id)}
-            className="btn btn-danger btn-small"
-          >
-            🗑️ Delete
-          </button>
-        </div>
-      </div>
-      
-      <div className="product-meta">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        {new Date(product.createdAt).toLocaleDateString('en-US', { 
-          month: 'short', 
-          day: 'numeric', 
-          year: 'numeric' 
-        })}
-      </div>
-    </div>
-  );
-};
-
-// Main App Component
 export default function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,7 +9,6 @@ export default function App() {
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     price: '',
@@ -66,7 +18,6 @@ export default function App() {
 
   const API_URL = 'http://localhost:5000/api/products';
 
-  // Fetch products from backend
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -86,7 +37,6 @@ export default function App() {
     }
   };
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -95,7 +45,6 @@ export default function App() {
     }));
   };
 
-  // Create or Update product
   const handleSubmit = async () => {
     try {
       const url = editingProduct 
@@ -124,7 +73,6 @@ export default function App() {
     }
   };
 
-  // Delete product
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
     
@@ -141,7 +89,6 @@ export default function App() {
     }
   };
 
-  // Edit product
   const handleEdit = (product) => {
     setEditingProduct(product);
     setFormData({
@@ -153,7 +100,6 @@ export default function App() {
     setShowForm(true);
   };
 
-  // Reset form
   const resetForm = () => {
     setFormData({
       name: '',
